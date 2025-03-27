@@ -4,13 +4,11 @@ PROJECT
 :large_blue_diamond: 개요
 ---
 <!-- 프로젝트의 목표가 무엇인가 -->
-일정 관리 앱 서버 프로젝트를 작성하였습니다.
 
 <!-- 무엇을 구현하였는가 -->
-API 명세서와 ERD를 만들고 이를 바탕으로 Spring과 SQL을 통해 DB와 CRUD를 구현합니다.
 
 **개발 환경**
-Oracle JDK 17.0.14
+JDK: Oracle JDK 17.0.14
 IDE: IntelliJ
 Framework: Spring
 
