@@ -20,7 +20,9 @@ Framework: Spring
 
 - - -
 ## :large_blue_diamond: API 명세서 & ERD 작성
-### [:memo: API 명세서 & ERD 노션 링크](링크)
+### [:memo: API 명세서 노션 링크](https://hushed-ox-d32.notion.site/API-1c329343d97880eca646ccb052c40a70?pvs=4)
+
+### [:memo: ERD 노션](https://hushed-ox-d32.notion.site/API-1c329343d97880eca646ccb052c40a70?pvs=4)
 
 - - -
 ## :large_blue_diamond: 구현된 기능
