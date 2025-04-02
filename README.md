@@ -4,7 +4,9 @@ PROJECT
 :large_blue_diamond: 개요
 ---
 <!-- 프로젝트의 목표가 무엇인가 -->
+
 일정을 관리하는 웹 서버 프로젝트 작성
+
 <!-- 무엇을 구현하였는가 --><br>
 
 **개발 환경**
@@ -40,7 +42,9 @@ Lv 1
 
 [:memo: 설계 노션](https://hushed-ox-d32.notion.site/1c329343d9788026b4b1eecf482b1ed5?pvs=4)
 
+Long = 4N
 
+toString = 4N
 
 - - -
 ## :large_blue_diamond: API 명세서 & ERD 작성
