@@ -6,9 +6,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class CreateResponseDto {
-
-    private Long id;
+public class GetResponseDto {
 
     private String userName;
     private String title;
@@ -17,8 +15,7 @@ public class CreateResponseDto {
     private LocalDateTime createDateTime;
     private LocalDateTime updateDateTime;
 
-    public CreateResponseDto(Schedule schedule) {
-        this.id = schedule.getId();
+    public GetResponseDto(Schedule schedule) {
         this.userName = schedule.getUserName();
         this.title = schedule.getTitle();
         this.contents = schedule.getContents();
