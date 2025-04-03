@@ -18,7 +18,7 @@ create table user (
 );
 
 alter table schedule
-    drop column user_name;
+    drop column username;
 alter table schedule
     modify userId bigint;
 alter table schedule

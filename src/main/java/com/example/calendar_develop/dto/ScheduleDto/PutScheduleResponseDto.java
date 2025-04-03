@@ -1,4 +1,4 @@
-package com.example.calendar_develop.dto;
+package com.example.calendar_develop.dto.ScheduleDto;
 
 import com.example.calendar_develop.entity.Schedule;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class GetResponseDto {
+public class PutScheduleResponseDto {
 
     private String userName;
     private String title;
@@ -15,7 +15,7 @@ public class GetResponseDto {
     private LocalDateTime createDateTime;
     private LocalDateTime updateDateTime;
 
-    public GetResponseDto(Schedule schedule) {
+    public PutScheduleResponseDto(Schedule schedule) {
         this.userName = schedule.getUserName();
         this.title = schedule.getTitle();
         this.contents = schedule.getContents();

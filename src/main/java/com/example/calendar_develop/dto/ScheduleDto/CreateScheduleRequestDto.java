@@ -1,15 +1,15 @@
-package com.example.calendar_develop.dto;
+package com.example.calendar_develop.dto.ScheduleDto;
 
 import com.example.calendar_develop.entity.Schedule;
 import lombok.Getter;
 
 @Getter
-public class CreateRequestDto {
+public class CreateScheduleRequestDto {
     private String userName;
     private String title;
     private String contents;
 
-    public Schedule createRequestDto() {
+    public Schedule createScheduleRequestDto() {
         return Schedule.builder()
                 .userName(userName)
                 .title(title)

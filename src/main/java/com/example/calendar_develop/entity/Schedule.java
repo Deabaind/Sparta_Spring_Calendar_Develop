@@ -1,6 +1,6 @@
 package com.example.calendar_develop.entity;
 
-import com.example.calendar_develop.dto.PutRequestDto;
+import com.example.calendar_develop.dto.ScheduleDto.PutScheduleRequestDto;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -19,6 +19,7 @@ public class Schedule extends BaseEntity {
     private Long id;    // 일정 id, 고유 값, 자동 생성
 
     private String userName;    // 작성자 이름
+
     private String title;   // 일정 제목
     private String contents;    // 일정 내용
 
@@ -29,7 +30,8 @@ public class Schedule extends BaseEntity {
         this.contents = contents;
     }
 
-    public void update(PutRequestDto dto){
+    // PutScheduleRequestDto 타입으로 Schedule 데이터를 수정하여 save 하기 위한 메서드
+    public void update(PutScheduleRequestDto dto){
         this.userName = dto.getUserName();
         this.title = dto.getTitle();
         this.contents = dto.getContents();

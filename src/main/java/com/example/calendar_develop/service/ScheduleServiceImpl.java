@@ -1,6 +1,8 @@
 package com.example.calendar_develop.service;
 
-import com.example.calendar_develop.dto.*;
+import com.example.calendar_develop.dto.ScheduleDto.CreateScheduleRequestDto;
+import com.example.calendar_develop.dto.ScheduleDto.CreateScheduleResponseDto;
+import com.example.calendar_develop.dto.ScheduleDto.PutScheduleResponseDto;
 import com.example.calendar_develop.entity.Schedule;
 import com.example.calendar_develop.repository.ScheduleRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -17,9 +19,9 @@ public class ScheduleServiceImpl implements ScheduleService{
     }
 
     @Override
-    public CreateResponseDto create(CreateRequestDto createRequestDto) {
-        Schedule schedule = scheduleRepository.save(createRequestDto.createRequestDto());
-        return new CreateResponseDto(schedule);
+    public CreateScheduleResponseDto create(CreateScheduleRequestDto createRequestDto) {
+        Schedule schedule = scheduleRepository.save(createRequestDto.createScheduleRequestDto());
+        return new CreateScheduleResponseDto(schedule);
     }
 
     @Override
@@ -31,9 +33,9 @@ public class ScheduleServiceImpl implements ScheduleService{
     }
 
     @Override
-    public PutResponseDto updateById(Schedule schedule) {
+    public PutScheduleResponseDto updateById(Schedule schedule) {
         Schedule updateSchedule = scheduleRepository.save(schedule);
-        return new PutResponseDto(updateSchedule);
+        return new PutScheduleResponseDto(updateSchedule);
     }
 
     @Override
