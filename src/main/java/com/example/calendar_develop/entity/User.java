@@ -19,16 +19,19 @@ public class User extends BaseEntity {
 
     private String name;
     private String email;
+    private String password;
 
     @Builder
-    public User(String name, String email) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
+        this.password = password;
     }
 
     // PutUserRequestDto 타입으로 User 데이터를 수정하여 save 하기 위한 메서드
     public void update(PutUserRequestDto putUserRequestDto) {
         this.name = putUserRequestDto.getName();
         this.email = putUserRequestDto.getEmail();
+        this.password = putUserRequestDto.getPassword();
     }
 }

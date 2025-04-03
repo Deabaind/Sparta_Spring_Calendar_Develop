@@ -8,5 +8,5 @@ import lombok.Getter;
 public class PutUserRequestDto {
     private String name;
     private String email;
-
+    private String password;
 }

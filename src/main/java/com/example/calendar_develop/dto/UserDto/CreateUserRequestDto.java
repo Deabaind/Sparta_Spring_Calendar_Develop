@@ -8,11 +8,13 @@ public class CreateUserRequestDto {
 
     private String name;
     private String email;
+    private String password;
 
     public User createUserRequestDto() {
         return User.builder()
                 .name(name)
                 .email(email)
+                .password(password)
                 .build();
     }
 }

@@ -20,10 +20,12 @@ create table user (
 alter table schedule
     drop column username;
 alter table schedule
-    modify userId bigint;
+    add userId bigint;
 alter table schedule
     add constraint fkUserId
         foreign key (userId)
         references user(id);
+alter table user
+    add column password varchar(50);
 
 
