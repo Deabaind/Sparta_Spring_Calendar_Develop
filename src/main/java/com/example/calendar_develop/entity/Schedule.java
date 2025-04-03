@@ -1,5 +1,6 @@
 package com.example.calendar_develop.entity;
 
+import com.example.calendar_develop.dto.PutRequestDto;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -26,5 +27,11 @@ public class Schedule extends BaseEntity {
         this.userName = userName;
         this.title = title;
         this.contents = contents;
+    }
+
+    public void update(PutRequestDto dto){
+        this.userName = dto.getUserName();
+        this.title = dto.getTitle();
+        this.contents = dto.getContents();
     }
 }
