@@ -3,6 +3,7 @@ package com.example.calendar_develop.controller;
 import com.example.calendar_develop.dto.UserDto.*;
 import com.example.calendar_develop.entity.User;
 import com.example.calendar_develop.service.UserServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,11 @@ public class UserController {
 
     public UserController(UserServiceImpl userService) {
         this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public void login(@RequestBody LoginUserRequestDto RequestDto, HttpServletRequest request) {
+        userService.login(RequestDto.getEmail(), RequestDto.getPassword(), request);
     }
 
     @PostMapping
