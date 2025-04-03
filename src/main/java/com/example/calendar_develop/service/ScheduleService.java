@@ -4,9 +4,8 @@ import com.example.calendar_develop.dto.*;
 import org.springframework.http.ResponseEntity;
 
 public interface ScheduleService {
-    ResponseEntity<CreateResponseDto> create(CreateRequestDto createRequestDto);
+    CreateResponseDto create(CreateRequestDto createRequestDto);
     ResponseEntity<GetResponseDto> findById(Long id);
     ResponseEntity<PutResponseDto> updateById(PutRequestDto putRequestDto);
     void deleteById(Long id);
-
 }
