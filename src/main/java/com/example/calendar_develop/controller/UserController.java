@@ -19,8 +19,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public void login(@RequestBody LoginUserRequestDto RequestDto, HttpServletRequest request) {
-        userService.login(RequestDto.getEmail(), RequestDto.getPassword(), request);
+    public ResponseEntity<String> login(@RequestBody LoginUserRequestDto RequestDto, HttpServletRequest request) {
+        return userService.login(RequestDto.getEmail(), RequestDto.getPassword(), request);
     }
 
     @PostMapping("/logout")

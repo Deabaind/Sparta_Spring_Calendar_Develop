@@ -1,19 +1,16 @@
 package com.example.calendar_develop.dto.ScheduleDto;
 
-import com.example.calendar_develop.entity.Schedule;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class CreateScheduleRequestDto {
-    private String userName;
     private String title;
     private String contents;
 
-    public Schedule createScheduleRequestDto() {
-        return Schedule.builder()
-                .userName(userName)
-                .title(title)
-                .contents(contents)
-                .build();
+    public CreateScheduleRequestDto(CreateScheduleRequestDto createScheduleRequestDto) {
+        this.title = createScheduleRequestDto.getTitle();
+        this.contents = createScheduleRequestDto.getContents();
     }
 }

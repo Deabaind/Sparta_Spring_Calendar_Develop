@@ -2,6 +2,7 @@ package com.example.calendar_develop.controller;
 
 import com.example.calendar_develop.dto.ScheduleDto.*;
 import com.example.calendar_develop.entity.Schedule;
+import com.example.calendar_develop.entity.User;
 import com.example.calendar_develop.service.ScheduleServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +19,9 @@ public class ScheduleController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateScheduleResponseDto> create(@RequestBody CreateScheduleRequestDto createRequestDto) {
-        CreateScheduleResponseDto createResponseDto = scheduleService.create(createRequestDto);
-        return new ResponseEntity<>(createResponseDto, HttpStatus.OK);
+    public ResponseEntity<CreateScheduleResponseDto> create(@RequestBody CreateScheduleRequestDto createRequestDto, @SessionAttribute(name = "loginUser") User user) {
+        CreateScheduleResponseDto createScheduleResponseDto = scheduleService.create(createRequestDto, user);
+        return ResponseEntity.ok(createScheduleResponseDto);
     }
 
     @GetMapping("/{id}")

@@ -27,5 +27,7 @@ alter table schedule
         references user(id);
 alter table user
     add column password varchar(50);
-
+alter table user
+    modify column email VARCHAR(50) NOT NULL UNIQUE,
+    modify column password varchar(50) not null;
 

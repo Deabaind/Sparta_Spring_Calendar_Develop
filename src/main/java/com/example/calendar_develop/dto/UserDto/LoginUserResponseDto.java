@@ -6,8 +6,10 @@ import lombok.Getter;
 public class LoginUserResponseDto {
 
     private final Long id;
+    private final String name;
 
-    public LoginUserResponseDto(Long id) {
+    public LoginUserResponseDto(Long id, String name) {
         this.id = id;
+        this.name = name;
     }
 }

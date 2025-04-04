@@ -7,7 +7,6 @@ import lombok.Getter;
 @AllArgsConstructor
 public class PutScheduleRequestDto {
     private Long id;
-    private String userName;
     private String title;
     private String contents;
 

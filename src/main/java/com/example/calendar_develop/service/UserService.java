@@ -3,6 +3,7 @@ package com.example.calendar_develop.service;
 import com.example.calendar_develop.dto.UserDto.*;
 import com.example.calendar_develop.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.ResponseEntity;
 
 public interface UserService {
     // 생성할 일정의 request 입력
@@ -12,6 +13,6 @@ public interface UserService {
     // 수정한 Schedule 타입의 객체(행)를 save
     PutUserResponseDto updateById(User user);
     void deleteById(Long id);
-    void login(String email, String password, HttpServletRequest request);
+    ResponseEntity<String> login(String email, String password, HttpServletRequest request);
     void logout(HttpServletRequest request);
 }
