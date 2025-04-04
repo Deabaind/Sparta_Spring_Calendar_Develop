@@ -15,9 +15,9 @@ public class LoginFilter implements Filter {
     // 로그인이 아니라도 통과할 수 있는 URL
     private static final String[] WHITE_LIST = {
             "/",
-            "/user/sign",
-            "/login",
-            "/logout"
+            "/users/sign",
+            "/users/login",
+            "/users/logout"
     };
 
     // 인터페이스로 인해 자동으로 오버라이드 된 메서드
@@ -41,14 +41,14 @@ public class LoginFilter implements Filter {
         log.info("로그인 필터 로직 실행");
 
         // 로그인이 필요한 URL 이 맞는지 검사
-        if(iswhiteList(requestURI)) {
+        if(!iswhiteList(requestURI)) {
 
             // 로그인 되었다면 session 이 저장되었을 것을 전제로 진행
             // 변수 session 의 값은 세션이 존재한다면 세션 데이터를 저장, 세션이 없다면 null 을 저장
             HttpSession session = request.getSession(false);
 
-            // 로그인 하지 않은 사용자
-            if (session == null || session.getAttribute("sessionKey값") == null) {
+            // 로그인 하지 않은 사용자를 찾는 코드
+            if (session == null || session.getAttribute("loginUser") == null) {
                 throw new RuntimeException("로그인 해주세요.");
             }
         }

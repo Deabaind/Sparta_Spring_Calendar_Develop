@@ -58,8 +58,18 @@ public class UserServiceImpl implements UserService {
 
         // request 에서 세션 객체를 가져오는 코드로 없다면 자동으로 생성해준다.
         HttpSession session = request.getSession();
-        // 해당 유저가 로그인된 유저라고 저장하는 코드
+        // 해당 유저가 로그인된 유저라고 Key 값으로 저장하는 코드
         session.setAttribute("loginUser", user);
+    }
+
+    @Override
+    public void logout(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        // 만약 세션(세션 ID)이 비어있지 않다면 세션을 무효화한다.
+        if (session != null) {
+            session.invalidate();
+        }
+
     }
 
 

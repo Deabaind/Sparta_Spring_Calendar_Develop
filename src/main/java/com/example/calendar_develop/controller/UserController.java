@@ -23,7 +23,12 @@ public class UserController {
         userService.login(RequestDto.getEmail(), RequestDto.getPassword(), request);
     }
 
-    @PostMapping
+    @PostMapping("/logout")
+    public void logout(HttpServletRequest request) {
+        userService.logout(request);
+    }
+
+    @PostMapping("/sign")
     public ResponseEntity<CreateUserResponseDto> create(@RequestBody CreateUserRequestDto createUserRequestDto) {
         CreateUserResponseDto createUserResponseDto = userService.create(createUserRequestDto);
         return new ResponseEntity<>(createUserResponseDto, HttpStatus.OK);

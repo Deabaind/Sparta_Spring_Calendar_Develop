@@ -13,4 +13,5 @@ public interface UserService {
     PutUserResponseDto updateById(User user);
     void deleteById(Long id);
     void login(String email, String password, HttpServletRequest request);
+    void logout(HttpServletRequest request);
 }
