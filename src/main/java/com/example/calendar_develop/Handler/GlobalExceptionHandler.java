@@ -1,6 +1,7 @@
 package com.example.calendar_develop.Handler;
 
 import com.example.calendar_develop.Exception.EmailOrPasswordNotFoundException;
+import com.example.calendar_develop.Exception.ScheduleNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,5 +16,10 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleEmailOrPasswordNotFound(EmailOrPasswordNotFoundException exception) {
         // 401 오류코드 반환
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(exception.getMessage());
+    }
+
+    @ExceptionHandler(ScheduleNotFoundException.class)
+    public ResponseEntity<String> handleScheduleNotFound(ScheduleNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 }

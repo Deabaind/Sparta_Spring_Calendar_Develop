@@ -1,6 +1,7 @@
 package com.example.calendar_develop.service;
 
 import com.example.calendar_develop.Exception.EmailOrPasswordNotFoundException;
+import com.example.calendar_develop.Exception.UserNotFoundException;
 import com.example.calendar_develop.dto.UserDto.*;
 import com.example.calendar_develop.entity.User;
 import com.example.calendar_develop.repository.UserRepository;
@@ -41,10 +42,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(Long id) {
-        try {
-            userRepository.deleteById(id);
-        }   catch (EmptyResultDataAccessException Exception) {
-            System.out.println("일정을 찾을 수 없습니다.");
+        if(!userRepository.existsById(id)) {
+            throw new UserNotFoundException("유저를 찾을 수 없습니다.");
         }
     }
 

@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 public class PutScheduleResponseDto {
 
+    private String userName;
     private String title;
     private String contents;
 
@@ -16,6 +17,7 @@ public class PutScheduleResponseDto {
     private LocalDateTime updateDateTime;
 
     public PutScheduleResponseDto(Schedule schedule) {
+        this.userName = schedule.getUser().getName();
         this.title = schedule.getTitle();
         this.contents = schedule.getContents();
         this.createDateTime = schedule.getCreateDateTime();

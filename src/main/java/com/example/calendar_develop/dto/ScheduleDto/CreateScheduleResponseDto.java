@@ -11,6 +11,7 @@ public class CreateScheduleResponseDto {
 
     private Long id;
 
+    private String userName;
     private String title;
     private String contents;
 
@@ -20,6 +21,7 @@ public class CreateScheduleResponseDto {
 
     public CreateScheduleResponseDto(Schedule schedule) {
         this.id = schedule.getId();
+        this.userName = schedule.getUser().getName();
         this.title = schedule.getTitle();
         this.contents = schedule.getContents();
         this.createDateTime = schedule.getCreateDateTime();
