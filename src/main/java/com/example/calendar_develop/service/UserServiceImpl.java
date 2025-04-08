@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
         if(!userRepository.existsById(id)) {
             throw new UserNotFoundException("유저를 찾을 수 없습니다.");
         }
+        userRepository.deleteById(id);
     }
 
     @Override
